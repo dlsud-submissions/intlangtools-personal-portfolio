@@ -262,30 +262,22 @@ function typeEffect() {
 
   if (!deleting) {
     typingElement.textContent = currentWord.substring(0, charIndex);
-
     charIndex++;
 
     if (charIndex > currentWord.length) {
-      deleting = true;
-
-      setTimeout(typeEffect, 1200);
-
+      setTimeout(() => {
+        deleting = true;
+        typeEffect();
+      }, 1400);
       return;
     }
   } else {
     typingElement.textContent = currentWord.substring(0, charIndex);
-
     charIndex--;
 
     if (charIndex < 0) {
       deleting = false;
-
-      wordIndex++;
-
-      if (wordIndex >= words.length) {
-        wordIndex = 0;
-      }
-
+      wordIndex = (wordIndex + 1) % words.length;
       charIndex = 0;
     }
   }

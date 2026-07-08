@@ -263,10 +263,41 @@ body.dark .header {
 }
 
 .hero-content h3 {
-  margin: 18px 0;
+  margin: 24px 0 14px;
   font-size: 1.25rem;
   color: var(--accent);
   letter-spacing: 0.04em;
+}
+
+#typing-text {
+  display: inline-block;
+  min-width: 20ch;
+  white-space: nowrap;
+  opacity: 1;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+#typing-text::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1.2rem;
+  margin-left: 0.4rem;
+  background: var(--accent);
+  vertical-align: middle;
+  animation: blink-cursor 1.2s steps(2, start) infinite;
+}
+
+@keyframes blink-cursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-content p {
