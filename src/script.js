@@ -24,7 +24,7 @@ const projects = [
     title: "Foundations Calculator",
     description:
       "Keyboard-supported calculator built with vanilla JavaScript as one of my earliest frontend projects.",
-    image: "assets/calculator.png",
+    image: "assets/calculator.png ",
   },
 ];
 
